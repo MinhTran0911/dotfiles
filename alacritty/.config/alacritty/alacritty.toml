@@ -3,3 +3,13 @@
 
 [window]
   startup_mode = "Maximized"
+
+[mouse]
+  hide_when_typing = true
+
+[keyboard]
+  bindings = [
+    {key = "-", mods = "Control", action = "DecreaseFontSize"},
+    {key = "+", mods = "Control", action = "IncreaseFontSize"},
+    {key = "0", mods = "Control", action = "ResetFontSize"},
+  ]
