@@ -4,8 +4,6 @@
     "~/.config/alacritty/themes/themes/tokyo_night.toml"
   ]
 
-
-
 [window]
   startup_mode = "Maximized"
 
@@ -18,3 +16,8 @@
     {key = "+", mods = "Control", action = "IncreaseFontSize"},
     {key = "0", mods = "Control", action = "ResetFontSize"},
   ]
+
+[font]
+  normal = {family = "SauceCodePro Nerd Font", style = "Regular"}
+  size = 16
+  offset = {x = 0, y = 5}
