@@ -1,0 +1,7 @@
+[user]
+	name = "Minh Tran"
+  email = "trankhaiminh0911@gmail.com"
+[alias]
+	co = checkout
+	br = branch
+	st = status
