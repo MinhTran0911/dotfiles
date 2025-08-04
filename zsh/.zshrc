@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -70,6 +70,8 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+source ~/.oh-my-zsh/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -108,9 +110,11 @@ export LANG=en_US.UTF-8
 alias c="clear"
 alias ll="ls -lah --color=auto"
 alias v="vim"
+alias nv="nvim"
 
 export ZSHRC="~/.zshrc"
-export XDG_CONFIG_HOME="~/.config"
-
 
 eval $(thefuck --alias)
+
+# Oh My Posh
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
