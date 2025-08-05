@@ -111,10 +111,16 @@ alias c="clear"
 alias ll="ls -lah --color=auto"
 alias v="vim"
 alias nv="nvim"
+alias ff="fastfetch"
 
-export ZSHRC="~/.zshrc"
+export ZSHRC="$HOME/.zshrc"
+
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' accept-exact '*(/)'
 
 eval $(thefuck --alias)
 
 # Oh My Posh
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
+
+fastfetch
