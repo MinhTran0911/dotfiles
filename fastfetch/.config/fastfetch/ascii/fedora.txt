@@ -1,14 +1,14 @@
-${c1}              .'ccccc:.             
+$1              .'ccccc:.             
          ,'ccccccccccccccc:.        
       .';cccccccccccccccccccc:.     
-   .'cccccccccccccc${c2}o@@@@b${c1}ccccccc; 
-  .:ccccccccccccc${c2}d@@${c1}ccc${c2}q@@:${c1}cccccc, 
- .:ccccccccccccc${c2}@@@${c1}ccccc${c2}@@P${c1}ccccccc;
-,:cccccccccccccc${c2}@@@${c1}ccccccccccccccc:
-ccccccccc${c2}o@@@@@${c1}c${c2}@@@@@@@${c1}ccccccccccc:
-ccccccc${c2}d@P${c1}cccccc${c2}@@@${c1}ccccccccccccccc:
-cccccc${c2}@@o${c1}ccccccc${c2}@@@${c1}ccccccccccccccc'
-cccccc${c2}q@@b${c1}ccccc${c2}@@@P${c1}ccccccccccccc;  
-cccccccc${c2}q@@@@@@@P${c1}ccccccccccccc:,   
+   .'cccccccccccccc$2o@@@@b$1ccccccc; 
+  .:ccccccccccccc$2d@@$1ccc$2q@@:$1cccccc, 
+ .:ccccccccccccc$2@@@$1ccccc$2@@P$1ccccccc;
+,:cccccccccccccc$2@@@$1ccccccccccccccc:
+ccccccccc$2o@@@@@$1c$2@@@@@@@$1ccccccccccc:
+ccccccc$2d@P$1cccccc$2@@@$1ccccccccccccccc:
+cccccc$2@@o$1ccccccc$2@@@$1ccccccccccccccc'
+cccccc$2q@@b$1ccccc$2@@@P$1ccccccccccccc;  
+cccccccc$2q@@@@@@@P$1ccccccccccccc:,   
 'cccccccccccccccccccccccccc:.      
  ;ccccccccccccccccccccc:,.
