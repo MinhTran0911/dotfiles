@@ -110,6 +110,7 @@ export LANG=en_US.UTF-8
 alias c="clear"
 alias ll="ls -lah --color=auto"
 alias v="vim"
+alias h="history"
 alias nv="nvim"
 alias ff="fastfetch"
 
