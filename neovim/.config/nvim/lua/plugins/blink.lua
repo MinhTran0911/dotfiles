@@ -19,7 +19,8 @@ return {
       'L3MON4D3/LuaSnip',
       'rafamadriz/friendly-snippets',
       'bydlw98/blink-cmp-env',
-      'hrsh7th/cmp-nvim-lua'
+      'hrsh7th/cmp-nvim-lua',
+      'fang2hou/blink-copilot'
     },
 
     -- use a release tag to download pre-built binaries
@@ -94,7 +95,7 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { 'lsp', 'path', 'nvim_lua', 'snippets', 'buffer',  'env' },
+        default = { 'lsp', 'path', 'copilot', 'nvim_lua', 'snippets', 'buffer',  'env' },
         providers = {
           lsp = { min_keyword_length = 3 },
           path = {
@@ -119,7 +120,13 @@ return {
             -- IMPORTANT: use the same name as you would for nvim-cmp
             name = 'nvim_lua',
             module = 'blink.compat.source',
-          }
+          },
+          copilot = {
+            name = "copilot",
+            module = "blink-copilot",
+            score_offset = 100,
+            async = true,
+          },
         }
       },
 

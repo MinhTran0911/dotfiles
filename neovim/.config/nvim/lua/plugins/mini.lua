@@ -90,8 +90,10 @@ return {
       }
     })
 
-    require('mini.trailspace').setup()
+    local trailspace = require('mini.trailspace')
+    trailspace.setup()
     vim.api.nvim_set_hl(0, 'MiniTrailspace', { link = 'SpellBad' })
+    trailspace.highlight()
 
   end
 }
