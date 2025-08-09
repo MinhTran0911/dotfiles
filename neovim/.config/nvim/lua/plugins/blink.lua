@@ -61,13 +61,16 @@ return {
         }
       },
       menu = {
-        draw = { columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } }},
+        draw = { columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } } },
         -- border = 'rounded',
       },
       -- documentation = { window = { border = 'rounded' } },
     },
 
-    -- signature = { window = { border = 'rounded' } },
+    signature = {
+      enabled = true,
+    --   window = { border = 'rounded' }
+    },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -92,10 +95,11 @@ return {
     -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
     --
     -- See the fuzzy documentation for more information
-    fuzzy = { implementation = "prefer_rust_with_warning" },
+    fuzzy = { implementation = "rust" },
 
     cmdline = {
       keymap = {
+        preset = 'inherit',
         ['<Tab>'] = { 'select_next', 'fallback' },
         ['<S-Tab>'] = { 'select_prev', 'fallback' }
       },

@@ -5,9 +5,17 @@ return {
   config = function()
     local Rule = require('nvim-autopairs.rule')
     local npairs = require('nvim-autopairs')
-    npairs.add_rule(Rule("begin", "end", "verilog"))
-    npairs.add_rule(Rule("begin", "end", "systemverilog"))
-    npairs.add_rule(Rule("`", "`", "-verilog"))
-    npairs.add_rule(Rule("`", "`", "-systemverilog"))
+    local cond = require('nvim-autopairs.conds')
+
+    npairs.setup()
+
+    npairs.remove_rule('`', { "verilog", "systemverilog" })
+    npairs.remove_rule('\'', { "verilog", "systemverilog" })
+
+    npairs.add_rule(
+      Rule("begin", "end", { "verilog", "systemverilog" })
+        :end_wise(cond.done())
+    )
+
   end
 }

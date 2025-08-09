@@ -89,5 +89,9 @@ return {
         hipatterns.gen_highlighter.hex_color()
       }
     })
+
+    require('mini.trailspace').setup()
+    vim.api.nvim_set_hl(0, 'MiniTrailspace', { link = 'SpellBad' })
+
   end
 }

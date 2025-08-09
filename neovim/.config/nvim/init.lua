@@ -1,18 +1,90 @@
 vim.loader.enable()
 
+nvim_version = vim.version()
+major = nvim_version.major
+minor = nvim_version.minor
+patch = nvim_version.patch
+version = major .. '.' .. minor .. '.' .. patch
+vim.notify('Nvim Version: ' .. version)
+
+vim.opt.compatible = false
+vim.opt.updatetime = 50
+
+-- Disabled ununsed providers
+vim.g.loaded_node_provider = 0
+vim.g.loaded_ruby_provider = 0
+
+vim.opt.shell = '/bin/bash'
+
+-- +--- Colorscheme ---+
+vim.opt.termguicolors = true
+vim.opt.guicursor = 'a:block,i:ver100-blinkon1000-blinkoff1000'
+
+-- +--- Line Number ---+
+vim.opt.number = true
+vim.opt.relativenumber = false
+
+-- +--- Wrap ---+
+vim.opt.wrap = true
+
+-- +--- Identation ---+
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true -- Convert tabs to spaces
+
+-- +--- Search Highlighting ---+
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.showmatch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- +--- Cursor ---+
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+
+-- +--- Clipboard ---+
+vim.opt.clipboard = 'unnamedplus'
+
+-- +--- Misc ---+
+vim.opt.ttyfast = true -- Speed up scrolling
+vim.opt.swapfile = false -- Do not generate *.swp file when opening
+vim.opt.encoding = 'UTF-8'
+vim.opt.showmode = false -- Disable showmode as statusline is provided by plugins
+vim.opt.virtualedit = 'none'
+vim.opt.list = false
+vim.opt.foldenable = false
+
+-- Do not count "," as part of path. This allow gf operation in Xcelium logs
+vim.opt.isfname:remove({ ',', '+' })
+vim.opt.isfname:append({ '{', '}', '$' })
+
+-- +--- Split Window Direction ---+
+vim.opt.splitright = true
+vim.opt.splitbelow = false
+
+-- +--- Syntax Highlighting ---+
+vim.filetype.add({
+  vh  = 'verilog',
+  vp  = 'verilog',
+  svh = 'systemverilog',
+  svp = 'systemverilog',
+  svi = 'systemverilog',
+  f   = 'sh',
+  ccf = 'tcl',
+})
+
+vim.cmd[[ filetype on ]]
+
+-- +--- Language Server Protocol (LSP) ---+
+
+-- +--- Keymaps ---+
 require("config.keymaps")
 
--- Basic settings
-vim.o.number = true -- Enable line numbers
-vim.o.relativenumber = false -- Enable relative line numbers
-vim.o.tabstop = 2 -- Number of spaces a tab represents
-vim.o.shiftwidth = 2 -- Number of spaces for each indentation
-vim.o.expandtab = true -- Convert tabs to spaces
-vim.o.smartindent = true -- Automatically indent new lines
-vim.o.wrap = false -- Disable line wrapping
-vim.o.cursorline = true -- Highlight the current line
-vim.o.termguicolors = true -- Enable 24-bit RGB colors
-
+-- +--- Plugins ---+
 -- Bootstrap lazy.nvim
 require("config.lazy")
 
