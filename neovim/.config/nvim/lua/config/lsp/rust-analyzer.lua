@@ -1,4 +1,4 @@
-vim.lsp.config('rust_analyzer', {
+vim.lsp.config('rust-analyzer', {
   cmd = { 'rust-analyzer' },
   filetypes = { 'rust' },
   root_markers = { 'Cargo.toml', '.git' },
