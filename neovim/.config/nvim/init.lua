@@ -57,6 +57,7 @@ vim.opt.showmode = false -- Disable showmode as statusline is provided by plugin
 vim.opt.virtualedit = 'none'
 vim.opt.list = false
 vim.opt.foldenable = false
+vim.opt.spell = true
 
 -- Do not count "," as part of path. This allow gf operation in Xcelium logs
 vim.opt.isfname:remove({ ',', '+' })
@@ -77,9 +78,11 @@ vim.filetype.add({
   ccf = 'tcl',
 })
 
-vim.cmd[[ filetype on ]]
-
 -- +--- Language Server Protocol (LSP) ---+
+require('config.lsp.lua_ls')
+require('config.lsp.rust-analyzer')
+-- require('config.lsp.pyright')
+require('config.lsp.verible')
 
 -- +--- Keymaps ---+
 require("config.keymaps")
@@ -88,3 +91,4 @@ require("config.keymaps")
 -- Bootstrap lazy.nvim
 require("config.lazy")
 
+vim.api.nvim_create_user_command('E', 'Explore', {})
