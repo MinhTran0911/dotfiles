@@ -70,6 +70,8 @@ reduce_window_opacity=10
 saturation=1.00
 shadowless_popup=false
 transient_groove=false
+menu_blur_radius=0
+tooltip_blur_radius=0
 
 [GeneralColors]
 window.color=#1E1E2E
@@ -431,7 +433,7 @@ text.press.color=#CDD6F4
 text.focus.color=#CDD6F4
 
 [Hacks]
-transparent_dolphin_view=false
+transparent_dolphin_view=true
 blur_konsole=true
 transparent_ktitle_label=true
 transparent_menutitle=true
@@ -446,7 +448,7 @@ normal_default_pushbutton=true
 single_top_toolbar=false
 tint_on_mouseover=0
 transparent_pcmanfm_sidepane=true
-transparent_pcmanfm_view=false
+transparent_pcmanfm_view=true
 blur_translucent=true
 centered_forms=false
 kinetic_scrolling=false
