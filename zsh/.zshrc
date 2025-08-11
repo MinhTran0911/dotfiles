@@ -115,6 +115,8 @@ alias nv="nvim"
 alias ff="fastfetch"
 
 export ZSHRC="$HOME/.zshrc"
+export EDITOR="nvim"
+export GZIP="-9"
 
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' accept-exact '*(/)'
