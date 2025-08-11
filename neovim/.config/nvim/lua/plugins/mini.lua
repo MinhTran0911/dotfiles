@@ -1,8 +1,20 @@
-return { 
+return {
   'echasnovski/mini.nvim',
   enabled = true,
   version = false,
   init = function()
+
+    local ft
+
+    local minitrailspace_disable_ft = {
+      'snacks_dashboard'
+    }
+
+    local f = function(args)
+      ft = vim.bo[args.buf].filetype
+      vim.b[args.buf].minitrailspace_disable = true
+    end
+    vim.api.nvim_create_autocmd('Filetype', { pattern = minitrailspace_disable_ft, callback = f })
 
     require('mini.basics').setup({
       -- Options. Set to `false` to disable.
@@ -93,7 +105,9 @@ return {
     local trailspace = require('mini.trailspace')
     trailspace.setup()
     vim.api.nvim_set_hl(0, 'MiniTrailspace', { link = 'SpellBad' })
-    trailspace.highlight()
+    if (vim.tbl_contains(minitrailspace_disable_ft, ft) == 0) then
+      trailspace.highlight()
+    end
 
   end
 }

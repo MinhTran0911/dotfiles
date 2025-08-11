@@ -95,7 +95,15 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { 'lsp', 'path', 'copilot', 'nvim_lua', 'snippets', 'buffer',  'env' },
+        default = function(ctx)
+          local success, node = pcall(vim.treesitter.get_node)
+          if success and node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type()) then
+            return { 'buffer' }
+          else
+            return { 'lsp', 'path', 'copilot', 'nvim_lua', 'snippets', 'buffer',  'env' }
+          end
+        end,
+
         providers = {
           lsp = { min_keyword_length = 3 },
           path = {

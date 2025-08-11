@@ -28,12 +28,14 @@ vim.opt.relativenumber = false
 vim.opt.wrap = true
 
 -- +--- Identation ---+
+vim.g.python_recommended_style = false -- Disable rust-analyzer's recommended style
+vim.g.rust_recommended_style = false -- Disable rust-analyzer's recommended style
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.expandtab = true -- Convert tabs to spaces
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true -- Convert tabs to spaces
 
 -- +--- Search Highlighting ---+
 vim.opt.hlsearch = true
@@ -86,7 +88,7 @@ require('config.lsp.verible')
 
 -- +--- Keymaps ---+
 require("config.keymaps")
-
+vim.cmd [[ filetype indent off ]]
 -- +--- Plugins ---+
 -- Bootstrap lazy.nvim
 require("config.lazy")
